@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Altersprüfung</title>
+    <script type="text/javascript">
+      function fAltersprüfung() {
+        var vAlter = document.getElementById("idAlter").value;
+        var vAusgabe = "";
+
+        if ((vAlter >= 18)&& (vAlter < 67)&& (vAlter%2==0)) {
+          vAusgabe = vAusgabe + "Volljährig!";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine gerade Zahl";
+        } else if ((18 > vAlter)&& (vAlter%2==0)) {
+          vAusgabe = vAusgabe + "Noch nicht volljährig!";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine gerade Zahl";
+        } else if ((vAlter >= 67)&& (vAlter%2==0)) {
+          vAusgabe = vAusgabe + "Rentner";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine gerade Zahl";
+        }
+          else if ((vAlter > 18)&& (vAlter < 67)) {
+          vAusgabe = vAusgabe + "Volljährig!";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine ungerade Zahl";
+        } else if (18 > vAlter) {
+          vAusgabe = vAusgabe + "Noch nicht volljährig!";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine ungerade Zahl";
+        } else {
+          vAusgabe = vAusgabe + "Rentner";
+          vAusgabe = vAusgabe + " - und ihr Alter ist eine ungerade Zahl";
+        }
+
+        vAusgabe = vAusgabe + "<br></br>Erstellt durch Jasmin Regnery";
+
+        document.getElementById("idAusgabe").innerHTML = vAusgabe;
+     }
+    </script>
+  </head>
+  <body>
+    <h1>Altersprüfung</h1>
+    Alter eingeben: <input id="idAlter" type="text" value="17" />
+    <button onclick="fAltersprüfung();">Prüfe!</button><br></br>
+    <div id="idAusgabe"></div>
+  </body>
+</html>
